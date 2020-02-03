@@ -1,27 +1,27 @@
 #!/bin/bash
 
-DIR=`pwd`
-HOME=$PWD/home
+CURRENT=`pwd`
+LINK_HOME=$PWD/home
 
 
 echo "This script will create basic user config under a clean linux system" 
 echo "---init--"
 echo "copying files for local usage..."
-cp -rv ./basic/* ./home
+mkdir ./home
+cp -v ./basic/.vimrc ./home
+cp -v ./basic/.bashrc ./home
 
 echo 
 echo "---basic setup---"
 
-echo "ln -s home/.vimrc >> ~/.vimrc"
-if test -f ~/.vimrc; then
-    echo "...already exists"
-else
-    ln -s $HOME/.vimrc ~/.vimrc
-fi
+echo "append home/.vimrc >> ~/.vimrc"
+touch ~/.vimrc
+line_vim="source $LINK_HOME/.vimrc"
+grep "$line_vim" ~/.vimrc || echo $line_vim >> ~/.vimrc
 
 echo "append home/.bashrc >> ~/.bashrc"
-line="source $HOME/.bashrc"
-grep "$line" ~/.bashrc || echo "$line" >> ~/.bashrc
+line_bash="source $LINK_HOME/.bashrc"
+grep "$line_bash" ~/.bashrc || echo $line_bash >> ~/.bashrc
 
 echo "...done."
 
@@ -30,5 +30,5 @@ echo "---custom setup---"
 echo "list of available config:"
 find ./custom
 
-echo "Check the config files under $PWD/custom and use them according to your need."
+echo "Check the config files under $CURRENT/custom and use them according to your need."
 
