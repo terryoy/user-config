@@ -18,6 +18,7 @@ echo "append home/.vimrc >> ~/.vimrc"
 touch ~/.vimrc
 line_vim="source $LINK_HOME/.vimrc"
 grep "$line_vim" ~/.vimrc || echo $line_vim >> ~/.vimrc
+#ln -s $LINK_HOME/.vimrc ~/.vimrc
 
 echo "append home/.bashrc >> ~/.bashrc"
 line_bash="source $LINK_HOME/.bashrc"
