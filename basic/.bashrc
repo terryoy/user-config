@@ -2,4 +2,7 @@ alias pip="pip3"
 
 VIRTUALENVWRAPPER_PYTHON=`which python3`
 WORKON_HOME=~/.venv
-source ~/.local/bin/virtualenvwrapper.sh > /dev/null
+VENV_SCRIPT=`which virtualenvwrapper.sh`
+
+[ -e $VENV_SCRIPT ] || VENV_SCRIPT='~/.local/bin/virtualenvwrapper.sh'
+source $VENV_SCRIPT
