@@ -8,3 +8,12 @@ VENV_SCRIPT=`which virtualenvwrapper.sh`
 source $VENV_SCRIPT
 
 function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
+
+function tms() {
+    if [ "tmux has-session $1" ]; 
+    then
+        tmux attach-session -t $1
+    else
+        tmux new-session -s $1
+    fi
+}
