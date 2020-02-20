@@ -10,10 +10,16 @@ source $VENV_SCRIPT
 function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
 
 function tms() {
-    if [ "tmux has-session $1" ]; 
+    if [ test "tmux has-session -t $1" ]; 
     then
         tmux attach-session -t $1
     else
-        tmux new-session -s $1
+        TMCONF=~/.tmux/$1.conf
+        if [ test -f "$TMCONF" ];
+        then
+            tmux new-session -s $1 \; source-file $TMCONF
+        else 
+            tmux new-session -s $1
+        fi
     fi
 }
