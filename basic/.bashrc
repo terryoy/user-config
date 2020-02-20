@@ -7,8 +7,10 @@ VENV_SCRIPT=`which virtualenvwrapper.sh`
 [ -e $VENV_SCRIPT ] || VENV_SCRIPT='~/.local/bin/virtualenvwrapper.sh'
 source $VENV_SCRIPT
 
+# gitignore
 function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
 
+# tmux with a session name(auto attach if exists)
 function tms() {
     if [ test "tmux has-session -t $1" ]; 
     then
