@@ -12,8 +12,7 @@ function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
 
 # tmux with a session name(auto attach if exists)
 function tms() {
-    if [ test "tmux has-session -t $1" ]; 
-    then
+    if [ test "tmux has-session -t $1" ]; then
         tmux attach-session -t $1
     else
         TMCONF=~/.tmux/$1.conf
@@ -24,4 +23,6 @@ function tms() {
             tmux new-session -s $1
         fi
     fi
-}
+} 
+
+alias tml="tmux list-sessions"
