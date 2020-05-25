@@ -5,7 +5,10 @@ WORKON_HOME=~/.venv
 VENV_SCRIPT=`which virtualenvwrapper.sh`
 
 [ -e $VENV_SCRIPT ] || VENV_SCRIPT='~/.local/bin/virtualenvwrapper.sh'
-source $VENV_SCRIPT
+if [[ -f $VENV_SCRIPT ]]
+then
+    source $VENV_SCRIPT
+fi
 
 # gitignore
 function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
