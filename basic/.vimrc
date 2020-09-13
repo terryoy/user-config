@@ -6,6 +6,7 @@
 :set shiftwidth=4
 
 " toggle paste(no auto indent while pasting)
+:set paste
 :set pastetoggle=<F2>
 
 " auto commands
