@@ -1,3 +1,5 @@
+" this file is for NeoVim
+
 " default settings
 syntax on
 set autoindent
