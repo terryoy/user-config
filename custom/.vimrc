@@ -1,18 +1,15 @@
-" this file is for Vim
+" this file is for NeoVim
 
 " default settings
-:syntax on
-:set autoindent!
-:set expandtab
-:set tabstop=4
-:set shiftwidth=4
-:set nu
-:filetype on
-:syntax on
+syntax on
+set autoindent
+set paste
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 " toggle paste(no auto indent while pasting)
-:set paste
-:set pastetoggle=<F2>
+set pastetoggle=<F2>
 
 " auto commands
 
@@ -33,10 +30,6 @@ call plug#begin('~/.vim/plugged')
 
 " plugin: vim workspace
 Plug 'thaerkh/vim-workspace'
-
-" plugin: vim airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " plugin: fzf
 Plug 'junegunn/fzf', { 'do': './install --bin' }
