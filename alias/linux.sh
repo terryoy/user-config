@@ -30,4 +30,10 @@ function tms() {
 
 alias tml="tmux list-sessions"
 
+# -> Kitty Terminal Emulator
+if [[ "$TERM" == "xterm-kitty" ]]; then
+     alias ssh='kitty +kitten ssh'
+fi
+
+
 # -> next
