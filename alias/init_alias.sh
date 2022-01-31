@@ -18,6 +18,11 @@ if [[ -n "${INIT_USER_ALIAS_PYTHON}" ]]; then
     source "${ALIAS_PATH}/python.sh"
 fi 
 
+# Ruby Dev Aliases
+if [[ -n "${INIT_USER_ALIAS_RUBY}" ]]; then
+    # echo "Init user alias: ruby"
+    source "${ALIAS_PATH}/ruby.sh"
+fi
 
 
 # JavaScript Dev Aliases
