@@ -1,3 +1,4 @@
+export PATH=$PATH:~/user-config/home/bin
 
 # Initializee common aliases by funcitonal module parameters
 export INIT_USER_ALIAS_LINUX=true
