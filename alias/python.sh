@@ -13,7 +13,7 @@ VENV_SCRIPT=~/.local/bin/virtualenvwrapper.sh
 
 if [[ -f $VENV_SCRIPT ]]
 then
-    echo "init python virtualenv wrapper"
+    #echo "init python virtualenv wrapper"
     source $VENV_SCRIPT
 fi
 
