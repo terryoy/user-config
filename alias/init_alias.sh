@@ -30,3 +30,15 @@ if [[ -n "${INIT_USER_ALIAS_NODEJS}" ]]; then
     # echo "Init user alias: nodejs"
     source "${ALIAS_PATH}/nodejs.sh"
 fi
+
+# Docker Dev Aliases
+if [[ -n "${INIT_USER_ALIAS_DOCKER}" ]]; then
+    # echo "Init user alias: docker"
+    source "${ALIAS_PATH}/docker.sh"
+fi
+
+# Golang Dev Aliases
+if [[ -n "${INIT_USER_ALIAS_GOLANG}" ]]; then
+    # echo "Init user alias: golang"
+    source "${ALIAS_PATH}/golang.sh"
+fi
